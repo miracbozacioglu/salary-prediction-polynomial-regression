@@ -1,0 +1,62 @@
+# ---------- Byte-compiled / optimized / DLL files ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ---------- Jupyter Notebook ----------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# ---------- Virtual Environments ----------
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# ---------- Environment variables / secrets ----------
+.env
+.env.*
+*.local
+
+# ---------- Distribution / packaging ----------
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+wheels/
+
+# ---------- Unit test / coverage reports ----------
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# ---------- IDEs and Editors ----------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ---------- OS-generated files ----------
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ---------- Logs ----------
+*.log
+logs/
