@@ -1,7 +1,7 @@
-<h1 align="center">📈 Polynomial Regression — Salary Prediction</h1>
+<h1 align="center"> Polinom Regresyon — Maaş Tahmini</h1>
 
 <p align="center">
-  <i>Predicting salaries from job seniority levels using a non-linear Polynomial Regression model.</i>
+  <i>Doğrusal olmayan bir Polinom Regresyon modeli ile çalışanların unvan seviyesine göre maaşlarını tahmin etme.</i>
 </p>
 
 <p align="center">
@@ -14,46 +14,46 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" />
-  <img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square" alt="Status" />
-  <img src="https://img.shields.io/badge/Model-Polynomial%20Regression-blueviolet?style=flat-square" alt="Model" />
+  <img src="https://img.shields.io/badge/Lisans-MIT-green?style=flat-square" alt="Lisans" />
+  <img src="https://img.shields.io/badge/Durum-Tamamland%C4%B1-success?style=flat-square" alt="Durum" />
+  <img src="https://img.shields.io/badge/Model-Polinom%20Regresyon-blueviolet?style=flat-square" alt="Model" />
 </p>
 
 ---
 
-## 🎯 About the Project
+## 🎯 Proje Hakkında
 
-> **Goal:** Build a model that predicts the **salary** an employee should earn based on their **position level**, capturing the *non-linear* relationship between the two.
+> **Amaç:** Bir çalışanın **unvan seviyesine** dayanarak alması gereken **maaşı** tahmin eden, bu iki değişken arasındaki *doğrusal olmayan* ilişkiyi yakalayan bir model geliştirmek.
 
-In real-world compensation data, salary rarely grows in a straight line as seniority increases — it tends to **accelerate** at higher levels. A simple **Linear Regression** model fails to capture this curvature and produces large prediction errors.
+Gerçek dünyadaki maaş verilerinde, kıdem arttıkça maaş nadiren doğrusal bir şekilde artar — genellikle üst seviyelerde **ivmelenerek** yükselir. Basit bir **Doğrusal Regresyon (Linear Regression)** modeli bu eğriselliği yakalayamaz ve büyük tahmin hatalarına yol açar.
 
-This project demonstrates why **Polynomial Regression** is the right tool for the job:
+Bu proje, neden **Polinom Regresyonun** doğru araç olduğunu göstermektedir:
 
-- 🔹 It extends Linear Regression by adding **higher-degree features** (`Level²`, `Level³`, …).
-- 🔹 This lets the model **bend** to fit the curved trend in the data.
-- 🔹 We **visually compare** the Linear and Polynomial fits to make the difference obvious.
+- 🔹 Doğrusal Regresyonu, **yüksek dereceli özellikler** (`Seviye²`, `Seviye³`, …) ekleyerek genişletir.
+- 🔹 Bu sayede model, verideki eğrisel trende **uyum sağlayacak şekilde bükülebilir**.
+- 🔹 Farkı net bir şekilde ortaya koymak için Doğrusal ve Polinom uyumlarını **görsel olarak karşılaştırırız**.
 
-The notebook walks through the full workflow: loading the data, fitting both models, plotting their decision curves side by side, and predicting the salary for a new seniority level.
+Notebook, sürecin tamamını adım adım gösterir: verinin yüklenmesi, her iki modelin eğitilmesi, karar eğrilerinin yan yana çizdirilmesi ve yeni bir kıdem seviyesi için maaş tahmini yapılması.
 
 ---
 
-## 📊 Dataset
+## 📊 Veri Seti
 
-The dataset (`Position_Salaries.csv`) contains **10 records** mapping job titles to their seniority level and corresponding salary.
+Veri seti (`Position_Salaries.csv`), iş unvanlarını kıdem seviyeleri ve karşılık gelen maaşlarla eşleştiren **10 kayıt** içerir.
 
-| Column     | Type        | Description                                            |
+| Sütun      | Tür         | Açıklama                                                |
 | :--------- | :---------- | :----------------------------------------------------- |
-| `Position` | Categorical | The job title (e.g., *Business Analyst*, *Manager*).   |
-| `Level`    | Numerical   | The numeric seniority level (1–10).                    |
-| `Salary`   | Numerical   | The annual salary in USD — the **target** variable.    |
+| `Position` | Kategorik   | İş unvanı (örn. *Business Analyst*, *Manager*).        |
+| `Level`    | Sayısal     | Sayısal kıdem seviyesi (1–10).                         |
+| `Salary`   | Sayısal     | Yıllık maaş (USD) — **hedef** değişken.                |
 
-### 🔍 A Note on Feature Selection
+### 🔍 Özellik Seçimi Hakkında Bir Not
 
-> The **`Position`** column is **intentionally excluded** from the model.
+> **`Position`** sütunu modele **bilinçli olarak dahil edilmemiştir**.
 >
-> Each position title maps one-to-one onto a `Level` value — both columns encode the *same hierarchical information*. Keeping `Position` would be redundant, so only **`Level`** is used as the independent variable (**X**), and **`Salary`** is the dependent variable (**y**).
+> Her bir unvan, birebir bir `Level` değerine karşılık gelir — yani iki sütun da *aynı hiyerarşik bilgiyi* taşır. `Position` sütununu tutmak gereksiz tekrar (redundancy) yaratacağından, bağımsız değişken (**X**) olarak yalnızca **`Level`** kullanılmış, bağımlı değişken (**y**) ise **`Salary`** olarak belirlenmiştir.
 
-#### Sample of the data:
+#### Veriden bir örnek:
 
 | Position           | Level | Salary    |
 | :----------------- | :---: | --------: |
@@ -65,71 +65,71 @@ The dataset (`Position_Salaries.csv`) contains **10 records** mapping job titles
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Kullanılan Teknolojiler
 
-| Library            | Role in the Project                                      |
-| :----------------- | :------------------------------------------------------- |
-| 🐍 **Python**      | Core programming language.                               |
-| 🐼 **Pandas**      | Loading and handling the dataset.                        |
-| 🔢 **NumPy**       | Numerical operations and array manipulation.             |
-| 📉 **Matplotlib**  | Visualizing the Linear vs. Polynomial regression curves. |
-| 🤖 **Scikit-Learn**| Building the regression models (`LinearRegression`, `PolynomialFeatures`). |
+| Kütüphane          | Projedeki Rolü                                          |
+| :----------------- | :------------------------------------------------------ |
+| 🐍 **Python**      | Ana programlama dili.                                   |
+| 🐼 **Pandas**      | Veri setinin yüklenmesi ve işlenmesi.                  |
+| 🔢 **NumPy**       | Sayısal işlemler ve dizi (array) manipülasyonu.        |
+| 📉 **Matplotlib**  | Doğrusal ve Polinom regresyon eğrilerinin görselleştirilmesi. |
+| 🤖 **Scikit-Learn**| Regresyon modellerinin kurulması (`LinearRegression`, `PolynomialFeatures`). |
 
 ---
 
-## 🚀 How to Run
+## 🚀 Nasıl Çalıştırılır?
 
-Follow these steps to run the project locally.
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
 
-**1. Clone the repository**
+**1. Depoyu klonlayın**
 
 ```bash
-git clone https://github.com/<your-username>/polynomial_regression.git
+git clone https://github.com/<kullanici-adiniz>/polynomial_regression.git
 cd polynomial_regression
 ```
 
-**2. (Recommended) Create and activate a virtual environment**
+**2. (Önerilir) Bir sanal ortam oluşturup etkinleştirin**
 
 ```bash
-# Create the environment
+# Ortamı oluşturun
 python -m venv venv
 
-# Activate it (Windows)
+# Etkinleştirin (Windows)
 venv\Scripts\activate
 
-# Activate it (macOS / Linux)
+# Etkinleştirin (macOS / Linux)
 source venv/bin/activate
 ```
 
-**3. Install the required dependencies**
+**3. Gerekli bağımlılıkları kurun**
 
 ```bash
 pip install numpy pandas matplotlib scikit-learn jupyter
 ```
 
-**4. Launch the notebook**
+**4. Notebook'u başlatın**
 
 ```bash
 jupyter notebook polynomial_regression.ipynb
 ```
 
-> 💡 Run the cells from top to bottom to reproduce the data loading, model training, visualizations, and final salary prediction.
+> 💡 Veri yükleme, model eğitimi, görselleştirmeler ve nihai maaş tahminini yeniden üretmek için hücreleri yukarıdan aşağıya doğru çalıştırın.
 
 ---
 
-## ✅ Conclusion
+## ✅ Sonuç
 
-> **Polynomial Regression clearly outperforms Linear Regression on this non-linear dataset.**
+> **Polinom Regresyon, bu doğrusal olmayan veri setinde Doğrusal Regresyonu açık ara geride bırakmaktadır.**
 
-The visual comparison tells the whole story:
+Görsel karşılaştırma her şeyi anlatıyor:
 
-- 📏 The **Linear** model draws a single straight line that badly under-fits the data — overestimating low levels and severely underestimating high ones.
-- 🎯 The **Polynomial** model bends smoothly along the data points, tracking the steep salary growth at senior levels with high accuracy.
+- 📏 **Doğrusal** model, veriyi kötü bir şekilde uyumsuzlaştıran (under-fit) tek bir düz çizgi çizer — düşük seviyeleri olduğundan fazla, yüksek seviyeleri ise ciddi şekilde eksik tahmin eder.
+- 🎯 **Polinom** model ise veri noktaları boyunca pürüzsüzce bükülerek, üst seviyelerdeki dik maaş artışını yüksek doğrulukla takip eder.
 
-This project is a practical reminder of a key machine learning principle: **the model must match the shape of the data**. When the underlying relationship is curved, adding polynomial features is a simple yet powerful way to achieve a far more accurate fit. 🚀
+Bu proje, temel bir makine öğrenmesi prensibinin pratik bir hatırlatıcısıdır: **model, verinin şekline uymalıdır.** Altta yatan ilişki eğrisel olduğunda, polinom özellikleri eklemek çok daha doğru bir uyum elde etmenin basit ama güçlü bir yoludur. 🚀
 
 ---
 
 <p align="center">
-  <i>⭐ If you found this project helpful, consider giving it a star!</i>
+  <i>⭐ Bu projeyi faydalı bulduysanız, bir yıldız vermeyi düşünebilirsiniz!</i>
 </p>
